@@ -97,7 +97,7 @@ async def download_url_to_bytesio(
             with contextlib.suppress(Exception):
                 request_logger.log_request_response(operation_id=op_id, request_method="GET", request_url=url)
 
-            session = aiohttp.ClientSession(timeout=timeout_cfg)
+            session = aiohttp.ClientSession(timeout=timeout_cfg, trust_env=True)
             stop_evt = asyncio.Event()
 
             async def _monitor():

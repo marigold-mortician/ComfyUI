@@ -291,7 +291,7 @@ async def upload_file(
                 request_data=f"[File data {len(data)} bytes]",
             )
 
-            sess = aiohttp.ClientSession(timeout=timeout)
+            sess = aiohttp.ClientSession(timeout=timeout, trust_env=True)
             req = sess.put(upload_url, data=data, headers=headers, skip_auto_headers=skip_auto_headers)
             req_task = asyncio.create_task(req)
 
