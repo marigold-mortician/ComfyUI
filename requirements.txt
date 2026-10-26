@@ -1,4 +1,9 @@
-comfyui-frontend-package==1.57.1
+# Fork patch: patched frontend wheel (save-as/duplicate app-mode linearData
+# widget-id rewrite fix). Absolute path — pip resolves requirement paths
+# against the invocation CWD, not this file's directory. The @ file: pin also
+# removes the frontend from utils/install_util.py version reporting (its
+# parser only splits on '=='); accepted tradeoff for a private fork.
+comfyui-frontend-package @ file:///home/clarita/ComfyUI/wheels/comfyui_frontend_package-1.57.1+saveasfix.1-py3-none-any.whl
 comfyui-workflow-templates==0.11.96
 comfyui-embedded-docs==0.5.14
 torch
